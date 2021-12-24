@@ -21,4 +21,8 @@ keys.addEventListener('click', (event) =>{
     if (!target.matches('button')) {
         return;
     }
+
+    if (target.classList.contains('operator')) {
+        console.log('operator', tsrget.value);
+    }
 })
