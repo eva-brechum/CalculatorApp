@@ -1,7 +1,7 @@
 .container{
     max-width: 400px;
     margin: 10vh auto 0 auto;
-    box-shadow: 0px 0px 43px 17px rgba(153,153,153,1);
+    box-shadow: 0 0 43px 17px black;
 }
 
 #display{
@@ -9,7 +9,9 @@
     height: 70px;
     line-height: 70px;
     padding: 16px 8px;
-    font-size: 25px;
+    font-size: 35px;
+    background-color: black;
+    color: purple;
 }
 
 /*using css grid to position buttons to get 4 equally sized buttons in each row*/
@@ -25,7 +27,7 @@
     border-right: 1px solid #999;
 }
 
-/*to set border for tge button & center the button label horizontally*/
+/*!*to set border for the button & center the button label horizontally*!*/
 
 .button {
     border: 1px solid #999;
@@ -35,13 +37,13 @@
     cursor: pointer;
 }
 
-#equal {
-    background-color: rgb(85, 85, 255);
+#equal-sign\ operator{
+    background: purple;
     color: white;
 }
 
 .button:hover {
-    background-color: mediumblue;
+    background-color: grey;
     color: white;
     transition: 0.5s ease-in-out;
 }
