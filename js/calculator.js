@@ -1,43 +1,20 @@
 "use strict";
 
-const calculator = {
-    displayValue: '0',
-    firstOperand: null,
-    waitingForSecondOperand: false,
-    operator: null,
-}
+let display =document.getElementById("display");
+let buttons = Array.from(document.getElementsByClassName("button"));
 
-function inputDigit(digit) {
-    const { displayValue} = calculator;
-
-    calculator.displayValue = displayValue === '0' ? digit : displayValue + digit;
-}
-
-function updateDisplay() {
-    const display =document.querySelector('.calculator-screen');
-    display.value = calculator.displayValue;
-}
-
-updateDisplay();
-
-const keys = document.querySelector('.calculator-keys');
-keys.addEventListener('click', (event) =>{
-    const {target} = event;
-    if (!target.matches('button')) {
-        return;
-    }
-    if (target.classList.contains('operator')) {
-        console.log('operator', target.value);
-        return;
-    }
-    if(target.classList.contains('decimal')){
-        console.log('decimal', target.value);
-        return;
-    }
-    if(target.classList.contains('all-clear')) {
-        console.log('clear'.target.value);
-        return;
-    }
-    inputDigit(target.value);
-    updateDisplay();
+buttons.map(button => {
+    button.addEventListener("click", (e) => {
+        switch(e.target.innerText){
+            case "C":
+                display.innerText ="";
+                break;
+            case "=":
+                try {
+                    display.innerText =eval(display.innerText);
+                }catch {
+                    display.innerText = "error"
+                }
+        }
+    })
 })
